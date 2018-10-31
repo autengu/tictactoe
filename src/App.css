@@ -8,7 +8,7 @@
 .TicTacBar {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  align-items: center;
   height: 50px;
 }
 
@@ -29,12 +29,12 @@
 }
 
 .DropCell {
-  border: blue solid 2px;
+  border: black solid 1px;
   width: 40px;
   height: 40px;
 }
 .DropCellDropped {
-  border: blue solid 2px;
+  border: black solid 1px;
   background-color: darkgoldenrod;
   width: 40px;
   height: 40px;

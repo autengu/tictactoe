@@ -7,7 +7,6 @@ const Types = {
 
 const squareTarget = {
   drop(props, monitor, component) {
-    // Obtain the dragged item
     const item = monitor.getItem();
 
     props.addToDroppedItems({
@@ -15,13 +14,7 @@ const squareTarget = {
       droppedTo: props.someKey
     });
 
-    // You can do something with it
-    //   ChessActions.movePiece(item.fromPosition, props.position);
-
-    // You can also do nothing and return a drop result,
-    // which will be available as monitor.getDropResult()
-    // in the drag source's endDrag() method
-    return { moved: true };
+    return {};
   }
 };
 

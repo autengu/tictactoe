@@ -3,7 +3,6 @@ import XODrop from './XODrop';
 import '../App.css';
 
 class DropGrid extends Component {
-
     constructor(props) {
         super(props);
         this.addToDroppedItems = this.addToDroppedItems.bind(this);
