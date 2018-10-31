@@ -11,6 +11,7 @@ const squareTarget = {
 
     props.addToDroppedItems({
       item: item.id,
+      value: item.value,
       droppedTo: props.someKey
     });
 
@@ -28,8 +29,10 @@ class XODrop extends Component {
   render() {
     const { connectDropTarget } = this.props;
     let dropCell;
-
-    this.props.drops.find(drop => drop.droppedTo === this.props.someKey) ? dropCell = <div className="DropCellDropped" /> : dropCell = <div className="DropCell" />
+    
+    this.props.drops.find(drop => drop.droppedTo === this.props.someKey) ? dropCell = <div className="DropCellDropped" >
+      {this.props.drops.find(drop => drop.droppedTo === this.props.someKey).value}
+    </div> : dropCell = <div className="DropCell" />
 
     return connectDropTarget(
       dropCell

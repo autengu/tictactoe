@@ -8,8 +8,8 @@ const Types = {
 
 const itemSource = {
   beginDrag(props) {
-    console.log('dragging item no: ' + props.id);
     this.id = props.id;
+    this.value = props.value;
     return this;
   }
 };

@@ -22,7 +22,7 @@ class App extends Component {
     return (
       <div className="App">
         <h2> Tic Tac Toe ReactDnD sample.</h2>
-        <p></p>
+   
         <TicTacBar drops={this.state.drops} />
         <DropGrid addToDroppedItems={this.addToDroppedItems} drops={this.state.drops} />
       </div>
