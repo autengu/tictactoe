@@ -16,6 +16,12 @@ const squareTarget = {
     });
 
     return {};
+  },
+  canDrop(props, monitor) {
+    if (props.drops.find(drop => drop.droppedTo === props.someKey)) {
+      return false;
+    }
+    return true;
   }
 };
 
@@ -29,7 +35,7 @@ class XODrop extends Component {
   render() {
     const { connectDropTarget } = this.props;
     let dropCell;
-    
+
     this.props.drops.find(drop => drop.droppedTo === this.props.someKey) ? dropCell = <div className="DropCellDropped" >
       {this.props.drops.find(drop => drop.droppedTo === this.props.someKey).value}
     </div> : dropCell = <div className="DropCell" />
