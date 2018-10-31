@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import '../App.css';
-
 import { DragSource } from 'react-dnd';
 
 const Types = {
@@ -9,8 +8,9 @@ const Types = {
 
 const itemSource = {
   beginDrag(props) {
-    console.log('yey start draggin m8!!');
-    
+    console.log('dragging item no: ' + props.id);
+    this.id = props.id;
+    return this;
   }
 };
 
@@ -24,7 +24,6 @@ function collect(connect, monitor) {
 class XO extends Component {
   render() {
     const { isDragging, connectDragSource, src } = this.props;
-
     return connectDragSource(
       <div className="XO" key={this.props.key}>
         {this.props.value}

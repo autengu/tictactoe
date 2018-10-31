@@ -3,24 +3,33 @@ import XODrop from './XODrop';
 import '../App.css';
 
 class DropGrid extends Component {
+
+    constructor(props) {
+        super(props);
+        this.addToDroppedItems = this.addToDroppedItems.bind(this);
+    }
+
+    addToDroppedItems = (drop) => {
+        this.props.addToDroppedItems(drop);
+    }
+
     render() {
         return (
-            <div>
+            <div className="DropTable">
                 <div>
-                    <XODrop key='0' />
-                    <XODrop key='1' />
-                    <XODrop key='2' />
-                </div>
-                <p></p>
-                <div>
-                    <XODrop key='3' />
-                    <XODrop key='4' />
-                    <XODrop key='5' />
+                    <XODrop addToDroppedItems={this.addToDroppedItems} someKey={0} drops={this.props.drops} />
+                    <XODrop addToDroppedItems={this.addToDroppedItems} someKey={1} drops={this.props.drops} />
+                    <XODrop addToDroppedItems={this.addToDroppedItems} someKey={2} drops={this.props.drops} />
                 </div>
                 <div>
-                    <XODrop key='6' />
-                    <XODrop key='7' />
-                    <XODrop key='8' />
+                    <XODrop addToDroppedItems={this.addToDroppedItems} someKey={3} drops={this.props.drops} />
+                    <XODrop addToDroppedItems={this.addToDroppedItems} someKey={4} drops={this.props.drops} />
+                    <XODrop addToDroppedItems={this.addToDroppedItems} someKey={5} drops={this.props.drops} />
+                </div>
+                <div>
+                    <XODrop addToDroppedItems={this.addToDroppedItems} someKey={6} drops={this.props.drops} />
+                    <XODrop addToDroppedItems={this.addToDroppedItems} someKey={7} drops={this.props.drops} />
+                    <XODrop addToDroppedItems={this.addToDroppedItems} someKey={8} drops={this.props.drops} />
                 </div>
             </div>
         )
